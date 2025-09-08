@@ -66,7 +66,7 @@ struct ExchangeRateView: View {
                   }
                   .padding(.vertical, 4)
                 }
-              }
+              }.scrollContentBackground(.hidden)
               
               if store.state.isLoading {
                 ProgressView().padding(.top)
@@ -85,6 +85,7 @@ struct ExchangeRateView: View {
                 Button("Done"){
                   countrySelectionIsFocused = false
                 }
+                .foregroundColor(.white)
               }
             }
         }

@@ -35,6 +35,9 @@ final class ExchangeRateStore: ObservableObject {
 
         case .amountChanged(let value):
             state.amount = value
+          if !state.targetCurrency.isEmpty{
+            dispatch(.convert)
+          }
 
         case .convert:
             fetchExchangeRate()
