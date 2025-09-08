@@ -12,7 +12,7 @@ import Foundation
 final class ExchangeRateStore: ObservableObject {
     @Published private(set) var state = ExchangeRateState.initial()
 
-    private let apiKey = "YOUR-API-KEY"
+    private let apiKey = "e2c93d67fcbab2849168d268"
     private var cancellables = Set<AnyCancellable>()
 
     init() {
@@ -30,6 +30,7 @@ final class ExchangeRateStore: ObservableObject {
 
         case .selectCurrency(let code):
             state.targetCurrency = code
+            state.searchText = getCountryName(code: code)[0].country
             dispatch(.convert)
 
         case .amountChanged(let value):
@@ -73,6 +74,12 @@ final class ExchangeRateStore: ObservableObject {
             }
         }
     }
+  
+  private func getCountryName(code:String) -> [Currency]  {
+          return state.availableCurrencies.filter {
+              $0.code.contains(code)
+          }
+  }
 
     private func loadCurrencies() {
         guard let url = Bundle.main.url(forResource: "currencies", withExtension: "json"),

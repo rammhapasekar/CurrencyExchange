@@ -41,7 +41,7 @@ final class ExchangeRateUITests: XCTestCase {
         let euroCell = app.staticTexts["Euro (EUR)"]
         euroCell.tap()
 
-        let resultText = app.staticTexts["Result:"]
+        let resultText = app.staticTexts["ConversionResult"]
         XCTAssertTrue(resultText.waitForExistence(timeout: 5.0))
     }
 }
