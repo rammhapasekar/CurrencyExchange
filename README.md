@@ -2,6 +2,9 @@
 
 A modern SwiftUI application demonstrating currency conversion between user’s local currency and a selected currency using a clean **Model-View-Intent (MVI)** architecture, powered by **Combine** and **AsyncImage**, with local caching and full test coverage.
 
+<img width="117" height="255" alt="Simulator Screen Shot - iPhone 14 Pro - 2025-09-09 at 16 13 43" src="https://github.com/user-attachments/assets/d91190e0-c825-4af7-aace-5ad13ff87268" />
+
+
 ---
 
 ## ✨ Features
